@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-sizing: border-box;
+    align-items: center;
+    background:linear-gradient(180deg, rgba(49, 46, 129,1),rgba(67, 56, 202,1));
+    height: 60px;
+    /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); */
+    box-shadow: 0px 2px 7px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+/* Navbar brand */
+.navbar-brand{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.navbar-brand img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.navbar-brand a{
+    font-size: 15pt;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* menu navbar */
+.menu-navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    margin-right: 20px;
+}
+.menu-navbar a{
+    padding: 5px 10px;
+    margin: 2px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.menu-navbar a:hover{
+    background-color: rgba(67, 56, 202,1);
+}
+.menu-navbar a:focus{
+    border: 2px double rgba(99, 102, 241,1);
+    background-color: rgba(79, 70, 229,1);
+}
+
+/* menu toggle */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    position: relative;
+    z-index: 1;
+}
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -6px;
+    top: -5px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0;
+}
+.menu-toggle span{
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: white;
+    transition: all 0.5s;
+}
+
+/* Animasi humbergur button*/
+.menu-toggle span:nth-child(2){
+    /* Untuk merubah poros ketika elemen diputar */
+    transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+/* CSS sibiling ketika input di cek cari saudara nya di span */
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px,0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+/* Conainer */
+.container{
+    margin: 0 auto;
+    background-color: rgb(233, 231, 231);
+    width: 100%;
+}
+.wrap{
+    margin: auto;
+    padding: 20px 80px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 640px;
+    background-color:rgba(238, 242, 255,1);
+}
+.content-wrap{
+    padding: 0 30px 0 0;
+    box-sizing: border-box;
+}
+.content-wrap span{
+    color: rgb(194, 189, 189);
+    font-size: 11pt;
+}
+.content-wrap h1{
+    font-size: 120pt;
+    color: rgba(49, 46, 129,1);
+}
+.content-wrap h4{
+    font-size: 20pt;
+    color: rgba(99, 102, 241, 1);
+}
+.content-wrap p{
+    font-size: 13pt;
+    color: rgba(30, 58, 138,1);
+}
+.content-wrap h4, .content-wrap p, .content-wrap a{
+    margin: 0 0 30px 20px;
+}
+.img-wrap{
+    animation: img-muncul 3s ease-in;
+}
+.img-wrap img{
+    max-width: 450px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background-color: rgba(129, 140, 248,1);
+    padding: 5px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    animation: animasiimg 4s ease-in;
+    animation-iteration-count: infinite;
+}
+
+/* Post */
+.post{
+    background-color:rgba(238, 242, 255,1);
+    padding: 20px 50px;
+    position: relative;
+}
+.post h2{
+    background-color: rgba(67, 56, 202,1);
+    color: white;
+    padding: 10px 50px 10px 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.post-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+    width: 100%;
+}
+.isi-post-content{
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 400px;
+    margin: 5px;
+}
+.isi-post-content span{
+    color: gray;
+    font-size: 10pt;
+}
+.isi-post-content h3{
+    font-size: 20pt;
+    margin: 10px 0;
+}
+.isi-post-content img{
+    max-width: 300px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+
+/* Responsive Tablet */
+@media screen and (max-width:760px){
+    .navbar{
+        padding: 0;
+        justify-content: space-around;
+    }
+    .menu-navbar{
+        width: 55%;
+    }
+    .navbar-brand{
+        margin-right: 50px;
+    }
+    .wrap{
+        display: block;
+        padding: 75px 20px;
+        height: 100vh;
+    }
+    .content-wrap h1{
+        font-size: 80pt;
+    }
+    .content-wrap h4{
+        font-size: 15pt;
+        margin-bottom: 10px;
+    }
+    .img-wrap{
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* Responsive handphone */
+@media screen and (max-width:576px){
+    .navbar{
+        justify-content: space-around;
+        padding: 0;
+    }
+    .navbar-brand{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 100px;
+    }
+    .menu-toggle{
+        display: flex;
+    }
+    .menu-navbar{
+        margin: 0;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        background:linear-gradient(270deg, rgba(49, 46, 129,1),rgba(67, 56, 202,1));
+        width: 70%;
+        overflow: hidden;
+        transition: all 0.5s;
+        opacity: 0;
+        z-index: 1;
+        transform: translateX(100%);
+        position: fixed;
+    }
+    .menu-navbar.slide{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .menu-navbar a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+    }
+    /* Wrap mobile */
+    .wrap{
+        padding: 70px 10px;
+        box-sizing: border-box;
+        height: auto;
+    }
+    .content-wrap{
+        padding: 0 20px;
+    }
+    .content-wrap h4, .content-wrap p{
+        margin-right: 0;
+    }
+    .content-wrap h4{
+        margin: 10px 0 0;
+    }
+    .content-wrap p{
+        text-align: justify;
+        margin:20px 0;
+    }
+    .content-wrap h1{
+        font-size: 70pt;
+    }
+    .img-wrap{
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    .img-wrap img{
+        max-width: 300px;
+        box-shadow: none;
+    }
+
+    /* Post content */
+    .post-content{
+        flex-direction: column;
+        align-items: center;
+    }
+    .isi-post-content img{
+        max-width: 200px;
+    }
+}
+
+
+/* Animasi */
+@keyframes animasiimg{
+    0%{
+        background-color: rgba(129, 140, 248,1);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50px;
+    }
+    25%{
+        background-color: rgb(97, 113, 252);
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+    50%{
+        background-color: rgb(65, 84, 255);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+    75%{
+        background-color: rgb(97, 113, 252);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50%;
+    }
+    100%{
+        background-color: rgba(129, 140, 248,1);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-bottom-left-radius: 50px;
+    }
+
+}
+
+@keyframes img-muncul{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
