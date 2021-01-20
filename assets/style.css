@@ -223,17 +223,19 @@ body{
     color: rgb(34, 20, 185);
 }
 .isi-post-content p{
-    line-height: 20px;
+    line-height: 25px;
+    text-align: justify;
     font-size: 15pt;
 }
-.isi-post-portofolio img{
+.isi-post-portofolio img, .isi-post-content img{
     max-width: 300px;
-    background-color: rgb(59, 95, 196);
     padding: 8px;
     box-sizing: border-box;
     border-radius: 5px;
 }
-
+.isi-post-portofolio img{
+    background-color: rgb(59, 95, 196);
+}
 /* Footer */
 .footer{
     background:linear-gradient(360deg, rgba(49, 46, 129,1),rgba(67, 56, 202,1));
@@ -371,6 +373,9 @@ body{
     .post h2, .portofolio h2{
         width: 200px;
         padding: 10px;
+        font-size: 20pt;
+    }
+    .isi-post-portofolio a{
         font-size: 20pt;
     }
 }
